@@ -85,7 +85,8 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.28);
   background: var(--green);
   color: #102214;
-  font-weight: 900;
+  font-size: 1.06rem;
+  line-height: 1;
 }
 
 .nav-links {
@@ -540,6 +541,7 @@ h1 {
   .brand-mark {
     width: 30px;
     height: 30px;
+    font-size: 0.98rem;
   }
 
   .header-cta {
