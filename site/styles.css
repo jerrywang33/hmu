@@ -62,6 +62,7 @@ a {
 
 .brand,
 .nav-links,
+.header-actions,
 .hero-actions,
 .handle-strip,
 .card-actions,
@@ -96,6 +97,30 @@ a {
 
 .nav-links a:hover {
   color: var(--white);
+}
+
+.header-actions {
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.header-social {
+  display: inline-grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 999px;
+  color: #101410;
+  background: rgba(255, 255, 255, 0.86);
+  font-size: 0.78rem;
+  font-weight: 900;
+  line-height: 1;
+  transition: background 0.16s ease, transform 0.16s ease;
+}
+
+.header-social:hover {
+  background: var(--white);
+  transform: translateY(-1px);
 }
 
 .header-cta,
@@ -521,6 +546,11 @@ h1 {
     min-height: 38px;
     padding: 0 12px;
     font-size: 0.82rem;
+  }
+
+  .header-social {
+    width: 32px;
+    height: 32px;
   }
 
   .hero-image {
