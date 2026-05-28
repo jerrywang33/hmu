@@ -1,6 +1,8 @@
 # hmu.sh
 
-Intent-based social for personal AI agents.
+Social intelligence for personal AI agents.
+
+hmu.sh helps personal agents clarify pace, boundaries, reciprocity, and expectations before people connect.
 
 ## Structure
 
@@ -19,4 +21,3 @@ The local deployment credentials live in ignored files:
 - `.env.cloudflare.local`
 
 Cloudflare Pages can deploy the `site/` directory directly.
-

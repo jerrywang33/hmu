@@ -1,322 +1,385 @@
-# hmu.sh Product Design v0.2
+# hmu.sh Product Design v0.3
 
 ## 1. Product Positioning
 
-**hmu.sh is intent-based social for personal AI agents.**
+**hmu.sh is a calm social intelligence layer for personal AI agents.**
 
 Core line:
 
-> Social, routed by intent.
+> AI that lowers social friction.
 
-Plain-language version:
+Public-facing line:
 
-> Let people hit up your agent first.
+> Social intelligence for personal agents.
 
-hmu.sh gives every person a public social entry point, such as `hmu.sh/jerry`. Instead of sending a low-context DM, visitors first talk to the person's agent. The agent understands intent, gathers context, filters noise, and turns the request into a clear card the owner can act on.
+hmu.sh helps people and their agents clarify the hidden dynamics of a connection before a direct conversation begins. The product is not only an AI intake form and not simply an agent that chats on your behalf. Its deeper job is to make first contact healthier, clearer, and easier to act on.
 
-This is not another feed-based social network. It is a personal agent social inbox.
+The four product variables are:
 
-## 2. Why Now
+- Pace
+- Boundaries
+- Reciprocity
+- Expectations
 
-Current social tools are built around attention, not intent:
+Internal definition:
 
-- DMs are noisy and unstructured.
-- Contact forms feel cold and static.
-- Calendar links expose time before fit is established.
-- LinkedIn and X optimize for reach, not high-quality next steps.
-- Personal agents are emerging, but they do not yet have a social protocol.
+> hmu.sh helps personal agents manage pace, boundaries, reciprocity, and expectations before people connect.
 
-hmu.sh sits at the moment where personal AI agents need a public interface for contact, filtering, and routing.
+## 2. Why This Matters
 
-## 3. Target Users
+The hard part of social connection is often not writing a message. It is reading the situation.
 
-The first users should be people who receive more inbound requests than they can comfortably process:
+People hesitate because they do not know:
 
-- AI builders
-- Indie hackers
-- Founders
-- Creators
-- Investors
-- Recruiters
-- Freelancers and consultants
-- Community operators
+- How fast to move
+- Whether the ask is appropriate
+- How to reject or redirect without awkwardness
+- Whether the exchange is mutual
+- What the next step should be
+- Whether the other person expects a call, a favor, an intro, a reply, or a relationship
 
-Their shared pain is not "I need more messages." It is "I need fewer low-quality interruptions and better context for the good ones."
+Existing tools do not solve this well:
 
-## 4. User Promise
+- DMs are noisy and low-context.
+- Contact forms are static and cold.
+- Calendar links expose time before fit is clear.
+- Social networks optimize attention instead of connection quality.
+- AI agents can talk, but they usually do not understand relationship dynamics.
 
-For the profile owner:
+hmu.sh is designed around connection quality rather than message volume.
 
-> Stop triaging vague DMs. Let your agent collect intent, context, and recommended next steps.
+## 3. Core Product Model
 
-For the visitor:
+Connection quality can be modeled as:
 
-> Make a better first contact. Explain why you are reaching out and get routed to the right next step.
+> Intent clarity + Context + Trust + Timing + Boundary fit + Mutual value + Expectation alignment
 
-For the network:
+hmu.sh improves these inputs before the owner has to spend attention.
 
-> Relationships become more useful when agents understand why people want to connect.
+The agent should answer:
 
-## 5. Core Product Loop
+- Why is this person reaching out?
+- Why now?
+- What do they want next?
+- Is this request within the owner's boundaries?
+- Is there value for both sides?
+- Should this move quickly, slowly, async, or not at all?
 
-1. A user creates a public hmu.sh profile.
-2. The user configures what they are open to.
-3. A visitor lands on `hmu.sh/{username}`.
-4. The visitor chooses an intent.
-5. The agent asks a few context-gathering questions.
-6. hmu.sh generates an intent card.
-7. The profile owner accepts, declines, replies, schedules, asks for more context, or archives.
-8. hmu.sh learns from those decisions and improves routing.
+## 4. The Four Variables
 
-## 6. Intent Types
+### Pace
 
-Initial intent taxonomy:
+Social connection is not always better when it moves faster.
 
-- Collaborate
-- Ask for advice
-- Hire me
-- Get hired
-- Invest / fundraise
-- Invite me
-- Make an intro
-- Schedule a call
-- Share something
-- Just say hi
+The agent should help decide:
 
-The taxonomy should remain editable. The owner should be able to add custom intents such as "Podcast guest", "Open-source maintainer request", "Angel deal", or "Design critique".
+- Reply now
+- Ask for more context
+- Move async first
+- Schedule a short call
+- Slow down
+- Park for later
+- Decline
 
-## 7. MVP Scope
+Product signals:
+
+- Suggested pace
+- Timing clarity
+- Urgency quality
+- Recommended next step
+
+### Boundaries
+
+Boundaries make social life sustainable. The product should help owners express preferences without seeming cold or unavailable.
+
+The agent should help:
+
+- Define what the owner is open to
+- Redirect requests outside the owner's scope
+- Decline gently
+- Protect time and attention
+- Ask for missing context before allowing escalation
+
+Product signals:
+
+- Boundary fit
+- Outside scope
+- Needs context
+- Allowed next steps
+
+### Reciprocity
+
+High-quality outreach is not purely extractive. The agent should help both sides see whether there is mutual value.
+
+The agent should ask:
+
+- What makes this useful for both people?
+- What does the visitor bring?
+- Why would the owner care?
+- Is this mostly an ask, or is there a real exchange?
+
+Product signals:
+
+- Balanced
+- Mostly ask
+- Strong mutual value
+- Reciprocity unclear
+
+### Expectations
+
+Many social failures come from misaligned expectations.
+
+The agent should clarify:
+
+- Does the visitor want a reply, a call, an intro, advice, hiring, collaboration, or emotional support?
+- Is the requested next step reasonable?
+- Does the owner prefer async-first?
+- Does success mean a meeting, a yes/no answer, a referral, or simply being seen?
+
+Product signals:
+
+- Expected next step
+- Expectation match
+- Mismatch warning
+- Suggested reframing
+
+## 5. Product Shape
+
+The first product is still a public personal entry point:
+
+`hmu.sh/{handle}`
+
+But the page should not feel like a profile page, link-in-bio, or chatbot.
+
+It should feel like:
+
+> A first contact protocol.
+
+Each owner has:
+
+- Public identity
+- Current focus
+- Open-to list
+- Not-open-to list
+- Contact preferences
+- Agent intake behavior
+- Inbox of relationship dynamics cards
+
+## 6. Core Loop
+
+1. The owner creates a public hmu.sh profile.
+2. The owner configures boundaries, preferred pace, and accepted intents.
+3. A visitor lands on the profile.
+4. The visitor chooses why they are reaching out.
+5. The agent asks targeted questions about intent, timing, mutual value, and next step.
+6. hmu.sh generates a relationship dynamics card.
+7. The owner chooses: reply, ask more, schedule, intro, decline, archive, or save for later.
+8. hmu.sh learns from owner decisions and improves future routing.
+
+## 7. Relationship Dynamics Card
+
+The card is the core artifact.
+
+It should include:
+
+- Visitor
+- Intent
+- Summary
+- Why now
+- Why this person
+- Suggested next step
+- Pace
+- Boundary fit
+- Reciprocity signal
+- Expectation alignment
+- Links and context
+- Transcript when needed
+
+Example:
+
+```text
+Intent: Collaborate
+Pace: Async first, then 15-min call
+Boundary fit: Within current AI social focus
+Reciprocity: Strong mutual learning value
+Expectation: Wants a pilot conversation
+Suggested move: Ask for pilot criteria before scheduling
+```
+
+This is the product's differentiation from a normal AI inbox. The card does not only summarize a message. It reads the social situation.
+
+## 8. Agent Behavior
+
+The agent should not pretend to be the owner. It should act as the owner's social routing layer.
+
+Good behavior:
+
+- Ask only questions that improve connection quality.
+- Avoid interrogating the visitor.
+- Make boundaries feel human.
+- Reduce awkwardness for both sides.
+- Suggest gentle next steps.
+- Prefer clear structure over long chat.
+- Never promise access to the owner without permission.
+
+Bad behavior:
+
+- Manipulative persuasion
+- PUA-style tactics
+- Fake intimacy
+- Over-automation
+- Pretending to know the owner's feelings
+- Pushing every request toward a call
+
+## 9. MVP Scope
 
 The MVP should prove one loop:
 
-> Public page -> AI intake -> intent card -> owner decision.
+> Public page -> AI intake -> relationship dynamics card -> owner decision.
 
 Included:
 
 - Public profile page
-- Owner profile setup
-- Contact preferences
+- Owner preferences
 - Visitor intent selection
-- AI intake chat
-- Intent summary card
+- AI intake
+- Relationship dynamics card
 - Private inbox
-- Basic actions: accept, decline, reply, ask for more context, archive
-- Email notification for new high-quality requests
+- Basic actions: reply, ask more, schedule, decline, archive
+- Email notification for high-quality requests
 
 Deferred:
 
 - Feed
 - Follow graph
-- Public posting
-- Full agent-to-agent negotiation
+- Dating-specific workflows
+- Fully automated agent-to-agent negotiation
 - Marketplace matching
 - Payments
-- Multi-user organizations
+- Organization accounts
 
-## 8. Public Profile Experience
+## 10. First ICP
 
-The profile should answer three questions quickly:
+Start with people who receive valuable but noisy inbound:
 
-1. Who is this person?
-2. What are they open to?
-3. Which intent should I choose?
+- AI builders
+- Founders
+- Creators
+- Investors
+- Community operators
+- Freelancers and consultants
 
-Example profile structure:
+The first narrative should focus on AI builders and founders because they understand personal agents and have immediate inbound triage pain.
 
-- Name, handle, short bio
-- Current focus
-- Open to
-- Not open to
-- Intent buttons
-- Agent chat area
-
-Tone should feel direct, quiet, and high-context. The page is not a creator Linktree clone; it is an intelligent social front door.
-
-## 9. Agent Intake Behavior
-
-The agent should not pretend to be the person. It should clearly act as the person's routing layer.
-
-Good agent behavior:
-
-- Ask only the questions needed for the selected intent.
-- Prefer structured answers where possible.
-- Ask one follow-up when context is missing.
-- Summarize before submission.
-- Respect the owner's boundaries.
-- Make the visitor feel helped, not screened by a wall.
-
-Example questions:
-
-- What are you hoping to discuss?
-- Why is this relevant to Jerry right now?
-- What should the next step be if there is a fit?
-- What background should Jerry know about you?
-- Is there a specific deadline or timing constraint?
-
-## 10. Intent Card
-
-Each submitted request becomes an intent card:
-
-- Visitor name
-- Visitor role or background
-- Selected intent
-- One-sentence summary
-- Why this matters
-- Suggested next action
-- Confidence / priority
-- Key links
-- Conversation transcript
-
-Priority labels:
-
-- High fit
-- Needs review
-- Needs more context
-- Low fit
-- Auto-decline candidate
-
-## 11. Owner Inbox
-
-The inbox should feel closer to a decision queue than a chat app.
-
-Primary actions:
-
-- Accept
-- Reply
-- Ask for more context
-- Schedule
-- Intro
-- Decline
-- Archive
-
-The inbox should optimize for fast triage. The owner should be able to process many requests without opening long threads.
-
-## 12. Differentiation
-
-Compared with DM:
-
-- More context before interruption
-- Better filtering
-- More actionable summaries
-
-Compared with contact forms:
-
-- Conversational
-- Adaptive
-- Better for ambiguous social requests
-
-Compared with Calendly:
-
-- Fit before time
-- Different routing for different intents
-- No open calendar link for everyone
-
-Compared with LinkedIn / X:
-
-- No feed
-- No attention game
-- Intent-first relationship building
-
-## 13. Landing Page Narrative
-
-Homepage hierarchy:
-
-1. `Social, routed by intent.`
-2. `Let people hit up your agent first.`
-3. Explain public profiles like `hmu.sh/jerry`.
-4. Show the flow: choose intent -> agent intake -> summarized card -> owner action.
-5. Position as the social inbox for the agent era.
-6. Early-access CTA.
-
-Recommended homepage copy:
-
-- H1: `Social, routed by intent.`
-- Subhead: `hmu.sh lets people hit up your personal agent first, so every request arrives with context, fit, and a recommended next step.`
-- CTA: `Request early access`
-- Secondary CTA: `See how it works`
-
-## 14. Brand Notes
+## 11. Brand Notes
 
 Name:
 
 - `hmu` means "hit me up".
-- `.sh` suggests shell, command, agent, and developer culture.
+- `.sh` suggests shell, command, agent, and builder culture.
 
 Voice:
 
-- Smart but not cute
-- Direct but not cold
-- Agent-native but human-centered
-- Social without the feed
+- Calm
+- Clear
+- Human
+- Socially intelligent
+- Agent-native without sounding robotic
+
+Avoid:
+
+- PUA language
+- Overclaiming neuroscience
+- Dark AI aesthetics
+- Feed-based social language
+- "AI replaces your relationships"
 
 Design direction:
 
-- Premium AI utility
-- High signal, low noise
-- Quiet interface density
-- Intent cards, routing lines, profile nodes
-- Avoid generic chatbot visuals
+- Fresh, light, and quiet
+- More Headspace / Paired than dark AI dashboard
+- Soft green, pale blue, warm white, graphite
+- Lightweight cards and signals
+- Plenty of whitespace
+- The feeling of lower social pressure
 
-## 15. Roadmap
+## 12. Landing Page Narrative
+
+Homepage hierarchy:
+
+1. `AI that lowers social friction.`
+2. Explain that hmu.sh helps agents clarify pace, boundaries, reciprocity, and expectations.
+3. Show the four variables.
+4. Show the relationship dynamics card.
+5. Explain the first contact protocol.
+6. Invite early access.
+
+Recommended homepage copy:
+
+- H1: `AI that lowers social friction.`
+- Subhead: `hmu.sh helps personal agents clarify pace, boundaries, reciprocity, and expectations before people connect.`
+- CTA: `Request early access`
+- Secondary CTA: `Explore the model`
+
+## 13. Roadmap
 
 Phase 1: Landing page and waitlist
 
-- Publish positioning
+- Publish the new positioning
 - Collect early users
-- Validate ICP and use cases
+- Validate whether the four-variable model resonates
 
-Phase 2: Single-player inbox
+Phase 2: Single-player social intelligence inbox
 
 - Public profiles
-- Intent intake
-- Card summaries
+- AI intake
+- Relationship dynamics cards
 - Manual owner decisions
 
-Phase 3: Personal agent memory
+Phase 3: Learned social preferences
 
-- Owner preferences
-- Learned routing
+- Boundary memory
+- Pace preferences
 - Reusable response patterns
 - Calendar and email integrations
 
-Phase 4: Agent-to-agent social
+Phase 4: Agent-to-agent connection
 
-- Visitor agent can speak to owner agent
-- Mutual fit summaries
+- Visitor agents can speak with owner agents
+- Mutual-fit summaries
 - Automated intro proposals
-- Lightweight trust signals
+- Trust and reputation signals
 
 Phase 5: Intent social graph
 
 - Discovery by current intent
 - Warm intro paths
-- Group and event routing
-- Reputation for high-quality requests
+- Relationship quality signals
+- Social without the feed
 
-## 16. Success Metrics
+## 14. Success Metrics
 
 Landing page:
 
 - Early-access conversion rate
-- Handle reservation count
-- ICP quality of signups
-- Qualitative feedback from AI builders / founders
+- Quality of signup intent
+- Handle reservation demand
+- Qualitative resonance around pace / boundaries / reciprocity / expectations
 
 MVP:
 
-- Requests submitted per profile
-- Request completion rate
-- Owner accept / decline ratio
+- Submitted requests per profile
+- Owner accept / decline / ask-more ratio
+- Requests needing no extra clarification
 - Time saved per inbox session
-- Percentage of requests needing no follow-up clarification
+- Owner trust in suggested next steps
 - Repeat use by profile owners
 
-## 17. Open Questions
+## 15. Open Questions
 
-- Should early profiles be invite-only?
-- Should hmu.sh start with founder / AI builder positioning only?
-- Should visitors need accounts, or can they submit as guests?
-- Should the first AI intake be one-shot form plus follow-up, or full chat?
-- Should early-access users reserve handles before product login exists?
+- Should the first intake be chat-like, form-like, or a hybrid?
+- Which four-variable labels should be visible to visitors versus owner-only?
+- Should visitors see boundary feedback before submitting?
+- Should agent intake ever coach visitors to rewrite their outreach?
+- Should hmu.sh support personal/dating contexts later, or stay professional-social first?
 - What is the first integration: email, calendar, X, LinkedIn, or GitHub?
-
